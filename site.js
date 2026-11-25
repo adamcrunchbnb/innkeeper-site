@@ -25,50 +25,102 @@
   }
 })();
 
-// Contact chooser. A mailto link does nothing on a computer with no mail app set up, so on a desktop
-// the orange buttons open a small panel with Gmail, the mail app, a copy button and the phone number.
-// On a phone, and without this file, the buttons stay plain email links.
+// Contact form, 2026-11-25. The orange buttons open one short form (name, property, email, phone) that is
+// delivered to Adam's inbox by the form service. Without this file, or before a service key is set, the
+// buttons stay plain email links, so the page never has a dead button.
 (function () {
-  if (!('HTMLDialogElement' in window)) return;
-  if (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) return;
-  var ADDRESS = 'adam@theinnkeeperagency.com';
-  var dlg = null;
+  var KEY = 'c7aec4b6-9ebe-4e32-985d-0bb2343d5713'; // Web3Forms access key (public by design); empty means the form is off and the email links stay
+  var ENDPOINT = 'https://api.web3forms.com/submit';
+  if (!KEY || !('HTMLDialogElement' in window) || !window.fetch) return;
+  var broker = /brokers/.test(location.pathname);
+  var dlg = null, opener = null;
+  function field(name, label, type, auto, mode) {
+    return '<label for="rf-' + name + '">' + label + '</label>' +
+      '<input id="rf-' + name + '" name="' + name + '" type="' + type + '" autocomplete="' + auto + '"' +
+      (mode ? ' inputmode="' + mode + '"' : '') + ' required>';
+  }
   function build() {
     dlg = document.createElement('dialog');
     dlg.className = 'reach';
     dlg.setAttribute('aria-labelledby', 'reach-title');
     dlg.innerHTML =
       '<button type="button" class="x" aria-label="Close">&times;</button>' +
-      '<h2 id="reach-title"></h2>' +
-      '<p>Your note goes straight to Adam, and he answers himself, usually the same day.</p>' +
-      '<a class="btn" data-k="gmail" target="_blank" rel="noopener">Write it in Gmail</a>' +
-      '<a class="opt" data-k="mail">Open my email app</a>' +
-      '<button type="button" class="opt" data-k="copy">Copy ' + ADDRESS + '</button>' +
-      '<a class="opt" href="tel:+17605825260">Or call (760) 582-5260</a>';
+      '<div class="ask">' +
+        '<h2 id="reach-title"></h2>' +
+        '<p>' + (broker ? 'Tell Adam who you are and he will call you himself, usually the same day.'
+                        : 'Tell Adam where to reach you and he will call you himself, usually the same day.') + '</p>' +
+        '<form novalidate>' +
+          field('name', 'Your name', 'text', 'name') +
+          field('property', broker ? 'Brokerage, and the property if you have one in mind' : 'Property name and town', 'text', 'organization') +
+          field('email', 'Email', 'email', 'email', 'email') +
+          field('phone', 'Phone', 'tel', 'tel', 'tel') +
+          '<input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">' +
+          '<p class="err" role="alert" hidden></p>' +
+          '<button type="submit" class="btn">Send</button>' +
+        '</form>' +
+        '<p class="alt">Prefer to talk now? Call <a href="tel:+17605825260">(760) 582-5260</a>.</p>' +
+      '</div>' +
+      '<div class="done" hidden tabindex="-1">' +
+        '<h2>Thank you.</h2>' +
+        '<p>Your note is with Adam. He will reply himself, usually the same day.</p>' +
+        '<button type="button" class="btn" data-k="close">Close</button>' +
+      '</div>';
     document.body.appendChild(dlg);
+    var form = dlg.querySelector('form'), err = dlg.querySelector('.err'), send = form.querySelector('.btn');
     dlg.querySelector('.x').addEventListener('click', function () { dlg.close(); });
+    dlg.querySelector('[data-k="close"]').addEventListener('click', function () { dlg.close(); });
     dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
-    dlg.querySelector('[data-k="copy"]').addEventListener('click', function (e) {
-      var b = e.currentTarget;
-      var done = function () { b.textContent = 'Copied. Paste it into a new email.'; };
-      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(ADDRESS).then(done, function () { b.textContent = ADDRESS; });
-      else b.textContent = ADDRESS;
+    dlg.addEventListener('close', function () { if (opener && opener.focus) opener.focus(); });
+    function fail(msg) { err.textContent = msg; err.hidden = false; }
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      err.hidden = true;
+      var bad = null;
+      ['name', 'property', 'email', 'phone'].forEach(function (n) {
+        var el = form.elements[n], ok = el.value.trim() !== '' && el.checkValidity();
+        if (n === 'phone' && el.value.replace(/\D/g, '').length < 7) ok = false;
+        el.setAttribute('aria-invalid', ok ? 'false' : 'true');
+        if (!ok && !bad) bad = el;
+      });
+      if (bad) { fail('Please check the highlighted field.'); bad.focus(); return; }
+      if (form.elements.botcheck.checked) { showDone(); return; }
+      send.disabled = true; send.textContent = 'Sending';
+      var v = function (n) { return form.elements[n].value.trim(); };
+      fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          access_key: KEY,
+          subject: (broker ? 'Broker inquiry: ' : 'Free consultation: ') + v('property'),
+          from_name: 'The Innkeeper Agency website',
+          name: v('name'), property: v('property'), email: v('email'), phone: v('phone'),
+          page: broker ? 'For brokers' : 'Home',
+          button: dlg.querySelector('#reach-title').textContent
+        })
+      }).then(function (r) { return r.json().then(function (j) { return r.ok && j && j.success; }); })
+        .then(function (ok) { if (ok) showDone(); else throw new Error('not sent'); })
+        .catch(function () {
+          fail('That did not send. Please email adam@theinnkeeperagency.com or call (760) 582-5260.');
+        })
+        .then(function () { send.disabled = false; send.textContent = 'Send'; });
     });
+    function showDone() {
+      form.reset();
+      dlg.querySelector('.ask').hidden = true;
+      var d = dlg.querySelector('.done'); d.hidden = false; d.focus();
+    }
   }
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a.btn[href^="mailto:"]');
     if (!a || (dlg && dlg.contains(a))) return;
     e.preventDefault();
     if (!dlg) build();
-    var href = a.getAttribute('href');
-    var q = href.indexOf('?') > -1 ? href.slice(href.indexOf('?') + 1) : '';
-    var p = new URLSearchParams(q);
-    dlg.querySelector('h2').textContent = a.textContent.trim();
-    dlg.querySelector('[data-k="mail"]').setAttribute('href', href);
-    dlg.querySelector('[data-k="gmail"]').setAttribute('href',
-      'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(ADDRESS) +
-      '&su=' + encodeURIComponent(p.get('subject') || '') + '&body=' + encodeURIComponent(p.get('body') || ''));
-    dlg.querySelector('[data-k="copy"]').textContent = 'Copy ' + ADDRESS;
+    opener = a;
+    dlg.querySelector('.ask').hidden = false;
+    dlg.querySelector('.done').hidden = true;
+    dlg.querySelector('.err').hidden = true;
+    dlg.querySelector('#reach-title').textContent = a.textContent.trim();
     dlg.showModal();
+    dlg.querySelector('input').focus();
   });
 })();
