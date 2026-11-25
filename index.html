@@ -2,18 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The Innkeeper Agency | More booked nights for independent motels and inns</title>
 <meta name="description" content="The Innkeeper Agency takes over pricing, online listings and the booking website for independent motels, inns, lodges and cabins. Owners pay only when room revenue grows.">
+<meta name="theme-color" content="#17382f">
 <link rel="canonical" href="https://theinnkeeperagency.com/">
 <meta property="og:title" content="The Innkeeper Agency">
 <meta property="og:description" content="More booked nights, at better prices. You pay only when revenue grows.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://theinnkeeperagency.com/hero-motel.jpg">
+<meta property="og:image" content="https://theinnkeeperagency.com/hero-motel-2000.jpg">
 <meta property="og:url" content="https://theinnkeeperagency.com/">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="hero-motel-2400.webp" type="image/webp" media="(min-width: 901px)" fetchpriority="high">
+<link rel="preload" as="image" href="hero-motel-1800.webp" type="image/webp" media="(min-width: 561px) and (max-width: 900px)" fetchpriority="high">
+<link rel="preload" as="image" href="hero-motel-1200.webp" type="image/webp" media="(max-width: 560px)" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -33,51 +41,17 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What does The Innkeeper Agency do?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We manage revenue for independent motels, inns, lodges and cabins with about 6 to 30 rooms. That means setting nightly rates, keeping listings and photos current on the booking sites, building a direct booking website, and making sure the property shows up when travelers ask an AI assistant where to stay."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What does it cost?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nothing up front. We earn 25 percent of the increase in room revenue over the same months of the year before, for twelve months. If revenue does not grow, the owner owes nothing for our time. Outside costs, such as a local photographer, are paid by the owner only when approved first."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How is growth measured?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "On the transient occupancy tax returns the owner already files with the city or county. Nobody has to take our word for the result."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What stays with the owner?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Everything about running the place: guests, staff, cleaning, the phone and the front desk. Every payment goes straight to the owner's own accounts, and the website, photos and listings stay in the owner's name."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you work with brokers?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. If you list small lodging and have an owner whose income does not yet support the price they want, we can help raise the numbers a buyer and a lender look at. It costs the broker nothing."
-      }
-    }
+    { "@type": "Question", "name": "What does The Innkeeper Agency do?", "acceptedAnswer": { "@type": "Answer", "text": "We manage revenue for independent motels, inns, lodges and cabins with about 6 to 30 rooms. That means setting nightly rates, keeping listings and photos current on the booking sites, building a direct booking website, and working to make the property show up when travelers ask an AI assistant where to stay." } },
+    { "@type": "Question", "name": "What does it cost?", "acceptedAnswer": { "@type": "Answer", "text": "Nothing up front. We earn 25 percent of the increase in room revenue over the same months of the year before, for twelve months. If revenue does not grow, the owner owes nothing for our time. Outside costs, such as a local photographer, are paid by the owner only when approved first." } },
+    { "@type": "Question", "name": "How is growth measured?", "acceptedAnswer": { "@type": "Answer", "text": "On the transient occupancy tax returns the owner already files with the city or county. Nobody has to take our word for the result." } },
+    { "@type": "Question", "name": "What stays with the owner?", "acceptedAnswer": { "@type": "Answer", "text": "Everything about running the place: guests, staff, cleaning, the phone and the front desk. Every payment goes straight to the owner's own accounts, and the website, photos and listings stay in the owner's name." } },
+    { "@type": "Question", "name": "What access do you need?", "acceptedAnswer": { "@type": "Answer", "text": "A user login to the booking sites, the reservation program, the website and the Google listing. Ownership of every account stays with the owner, and we never see or change bank or payout details." } },
+    { "@type": "Question", "name": "What happens after twelve months?", "acceptedAnswer": { "@type": "Answer", "text": "The pilot ends. The website, the domain, the photos and every account are in the owner's name and stay there. If both sides want to continue, we write a new agreement." } },
+    { "@type": "Question", "name": "Can the owner end it early?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Either side can end the pilot with written notice. The agreement spells out the notice period and what is owed on growth already achieved, and the owner reads it before deciding anything." } },
+    { "@type": "Question", "name": "Do you work with brokers?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. If you list small lodging and have an owner whose income does not yet support the price they want, we can help raise the numbers a buyer and a lender look at. It costs the broker nothing." } }
   ]
 }
 </script>
-<link rel="stylesheet" href="styles.css">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
 <a class="skip" href="#what">Skip to content</a>
@@ -85,7 +59,7 @@
 <header class="hero">
   <div class="wrap">
     <div class="nav">
-      <div class="brand"><a href="/">The Innkeeper Agency</a></div>
+      <div class="brand"><a href="/"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 50V30l22-17 22 17v20" fill="none" stroke="#f6f0e3" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="26" y="34" width="12" height="16" rx="2.5" fill="#e2513a"/></svg>The Innkeeper Agency</a></div>
       <nav class="links" aria-label="Main">
         <a class="opt" href="#what">What we do</a>
         <a class="opt" href="#how">How it works</a>
@@ -94,43 +68,51 @@
       </nav>
     </div>
     <div class="herogrid">
-      <div>
-        <h1>More booked nights, at better prices. <em>You pay only when revenue grows.</em></h1>
-        <p class="dek">We take over pricing, online listings and the booking website for independent motels, inns, lodges and cabins. You keep running your place the way you always have.</p>
-        <div class="herocta"><a class="btn" href="mailto:adam@theinnkeeperagency.com?subject=Free%20look%20at%20my%20rates&body=Hi%20Adam%2C%0A%0AMy%20place%20is%3A%20%0ATown%3A%20%0ABest%20number%20to%20reach%20me%3A%20%0A%0APlease%20send%20the%20free%20one-page%20look.">Get Free Consultation</a></div>
-        <div class="founder"><img src="adam-headshot.jpg" alt="Adam Mealey" width="52" height="52"><span><b>Adam Mealey, founder.</b> I owned and ran boutique lodging in California mountain towns. When you call, you get me.</span></div>
+      <h1>More booked nights, at better prices. <em>You pay only when revenue grows.</em></h1>
+      <p class="dek">We take over pricing, online listings and the booking website for independent motels, inns, lodges and cabins. You keep running your place the way you always have.</p>
+      <div class="herocta">
+        <a class="btn" href="mailto:adam@theinnkeeperagency.com?subject=Free%20consultation%20for%20my%20property&amp;body=Hi%20Adam%2C%0A%0AI%20would%20like%20a%20free%20consultation.%0A%0AMy%20place%20is%3A%20%0ATown%3A%20%0ANumber%20of%20rooms%3A%20%0ABest%20number%20and%20time%20to%20reach%20me%3A%20%0A%0APlease%20send%20the%20free%20one-page%20look%20and%20suggest%20a%20time%20for%20a%20fifteen-minute%20call.%0A" data-cta="hero">Get Free Consultation<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <span class="reassure"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Free, with no obligation.</span>
       </div>
+      <div class="founder"><picture><source srcset="adam-headshot-320.webp" type="image/webp"><img src="adam-headshot-320.jpg" alt="Adam Mealey" width="54" height="54"></picture><span><b>Adam Mealey, founder.</b> I owned and ran boutique lodging in California mountain towns. When you call, you get me.</span></div>
     </div>
   </div>
 </header>
 
-<div class="proof"><div class="wrap"><div class="p"><b>$0</b><span>up front. No setup fee and no monthly retainer.</span></div><div class="p"><b>25%</b><span>of the increase only, for twelve months. No growth, no bill.</span></div><div class="p"><b>Your returns</b><span>keep the score: the occupancy tax returns you already file.</span></div><div class="p"><b>100% yours</b><span>Guests, bank accounts, website and listings stay in your name.</span></div></div></div>
+<div class="proof" role="region" aria-label="The terms in brief"><div class="wrap">
+  <div class="p"><b>$0</b>up front. No setup fee and no monthly retainer.</div>
+  <div class="p"><b>25%</b>of the increase only, for twelve months. No growth, no bill.</div>
+  <div class="p"><b>Your returns</b>keep the score: the occupancy tax returns you already file.</div>
+  <div class="p"><b>100% yours</b>Guests, bank accounts, website and listings stay in your name.</div>
+</div></div>
 
 <main>
 <section id="what">
   <div class="wrap">
-    <div class="lab">What we do</div>
-    <h2>Four things that fill rooms.</h2>
+    <div class="sechead reveal">
+      <div><div class="lab">What we do</div><h2>Four things that fill rooms.</h2></div>
+      <p class="aside">You keep the guests, the staff and the front desk. We handle the four things that decide what each night earns.</p>
+    </div>
     <div class="four">
-      <div class="do">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18"/><path d="M6 20v-5"/><path d="M11 20v-9"/><path d="M16 20V8"/><path d="M4 9l5-4 4 3 7-5"/></svg>
+      <div class="do reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18"/><path d="M6 20v-5"/><path d="M11 20v-9"/><path d="M16 20V8"/><path d="M4 9l5-4 4 3 7-5"/></svg></div>
         <h3>Smarter pricing</h3>
         <p>Nightly rates set by season, day of the week and local events, so busy nights earn more and slow nights fill.</p>
       </div>
-      <div class="do">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10.5" r="1.8"/><path d="M4 18l5-4 3 2 4-4 5 5"/></svg>
+      <div class="do reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10.5" r="1.8"/><path d="M4 18l5-4 3 2 4-4 5 5"/></svg></div>
         <h3>Better listings</h3>
         <p>Fresh photos and complete, accurate pages on Google, Booking.com, Expedia and Airbnb.</p>
       </div>
-      <div class="do">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M8 14l2.5 2.5L16 12"/></svg>
+      <div class="do reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M8 14l2.5 2.5L16 12"/></svg></div>
         <h3>Direct bookings</h3>
         <p>A simple website of your own where guests check dates and book, with no commission to a booking site.</p>
       </div>
-      <div class="do">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-7l-5 4v-4H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/><path d="M12 8.2l.9 2 2 .9-2 .9-.9 2-.9-2-2-.9 2-.9z"/></svg>
+      <div class="do reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-7l-5 4v-4H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/><path d="M12 8.2l.9 2 2 .9-2 .9-.9 2-.9-2-2-.9 2-.9z"/></svg></div>
         <h3>Found by AI</h3>
-        <p>Travelers now ask ChatGPT, Claude and Google's AI where to stay. We make sure you are one of the answers.</p>
+        <p>Travelers now ask ChatGPT, Claude and Google's AI where to stay. We work to make you one of the answers.</p>
       </div>
     </div>
   </div>
@@ -138,39 +120,39 @@
 
 <section id="why">
   <div class="wrap">
-    <div class="lab">Why owners say yes</div>
-    <h2>Independent places leave money on busy nights.</h2>
+    <div class="reveal"><div class="lab">Why owners say yes</div>
+    <h2>Independent places leave money on busy nights.</h2></div>
     <div class="split">
-      <div class="card">
+      <figure class="card reveal">
         <div class="lab">A real example</div>
         <h3>One independent motel in the Eastern Sierra, on a June Saturday</h3>
-        <svg viewBox="0 0 400 112" role="img" aria-label="Bar chart of lowest nightly price on a June Saturday: the independent motel 97 dollars, three chain motels nearby 113, 124 and 124 dollars">
-          <g font-family="Hanken Grotesk, Helvetica, Arial, sans-serif" font-size="11">
-            <text x="0" y="17" font-weight="700" fill="#17382f">Independent motel</text>
-            <rect x="122" y="3" width="188" height="20" rx="4" fill="#e2513a"/>
-            <text x="317" y="18" font-weight="700" font-size="13" fill="#e2513a">$97</text>
-            <text x="0" y="46" fill="#3b4743">Chain motel A</text>
-            <rect x="122" y="32" width="219" height="20" rx="4" fill="#24503f"/>
-            <text x="348" y="47" font-weight="700" font-size="13" fill="#17382f">$113</text>
-            <text x="0" y="75" fill="#3b4743">Chain motel B</text>
-            <rect x="122" y="61" width="240" height="20" rx="4" fill="#24503f"/>
-            <text x="369" y="76" font-weight="700" font-size="13" fill="#17382f">$124</text>
-            <text x="0" y="104" fill="#3b4743">Chain motel C</text>
-            <rect x="122" y="90" width="240" height="20" rx="4" fill="#24503f"/>
-            <text x="369" y="105" font-weight="700" font-size="13" fill="#17382f">$124</text>
-          </g>
-        </svg>
-        <p class="cap">Same guest ratings, $16 to $27 less a night. Its own website said "under construction", and an AI assistant could not find it. Lowest prices shown by Google's hotel search, checked November 2026.</p>
-      </div>
-      <div class="why">
+        <div class="chart" role="img" aria-label="Lowest nightly price on a June Saturday: the independent motel 97 dollars; three chain motels nearby 113, 124 and 124 dollars.">
+          <div class="bar us" aria-hidden="true"><span>Independent motel</span><span class="track"><span class="fill" style="--w:78.2"></span><span class="val">$97</span></span></div>
+          <div class="bar" aria-hidden="true"><span>Chain motel A</span><span class="track"><span class="fill" style="--w:91.1"></span><span class="val">$113</span></span></div>
+          <div class="bar" aria-hidden="true"><span>Chain motel B</span><span class="track"><span class="fill" style="--w:100"></span><span class="val">$124</span></span></div>
+          <div class="bar" aria-hidden="true"><span>Chain motel C</span><span class="track"><span class="fill" style="--w:100"></span><span class="val">$124</span></span></div>
+        </div>
+        <div class="gap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>$16 to $27 a night below the chains</div>
+        <figcaption class="cap">Same guest ratings. Its own website said "under construction", and in our test an AI assistant did not name it. Lowest prices shown by Google's hotel search, checked November 2026.</figcaption>
+      </figure>
+      <div class="why reveal">
         <div class="lab">Why it is an easy yes</div>
         <ul>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span><b>Nothing up front.</b> No setup fee and no monthly retainer.</span></li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span><b>Paid only on growth.</b> We earn 25 percent of the increase in your room revenue. If it does not grow, you owe nothing.</span></li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span><b>Measured on your own numbers.</b> The occupancy tax returns you already file, against the same months last year.</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span><b>In dollars.</b> If your rooms brought in $90,000 last summer and $102,000 this summer, the increase is $12,000. You keep $9,000 of it and we earn $3,000. An example of the arithmetic, not a forecast.</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span><b>In dollars.</b>
+            <span class="math" role="group" aria-label="Worked example">
+              <span>Room revenue last summer</span><span>$90,000</span>
+              <span>Room revenue this summer</span><span>$102,000</span>
+              <span>The increase</span><span>$12,000</span>
+              <span class="tot">You keep</span><span class="tot">$9,000</span>
+              <span>We earn, 25 percent</span><span>$3,000</span>
+              <span class="mnote">An example of the arithmetic, not a forecast.</span>
+            </span></span></li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span><b>You stay in control.</b> Your guests, staff, bank accounts, website and listings all stay yours.</span></li>
         </ul>
+        <a class="more" href="#start">See how to start<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
   </div>
@@ -178,30 +160,42 @@
 
 <section id="how">
   <div class="wrap">
-    <div class="lab">How it works</div>
-    <h2>Three steps, and the first one is free.</h2>
+    <div class="reveal"><div class="lab">How it works</div>
+    <h2>Three steps, and the first one is free.</h2></div>
     <div class="steps">
-      <div class="step"><div class="n">1</div><div><h3>A free look</h3><p>We send one page comparing your rates and listings with three places nearby.</p></div></div>
-      <div class="step"><div class="n">2</div><div><h3>A fifteen-minute call</h3><p>You tell us how you set rates today. We tell you what we would change.</p></div></div>
-      <div class="step"><div class="n">3</div><div><h3>A twelve-month pilot</h3><p>We do the work and report each month. You watch the numbers on your own returns.</p></div></div>
+      <div class="step reveal"><div class="n">1</div><div><h3>A free look <span class="tag">Free</span></h3><p>We send one page comparing your rates and listings with three places nearby.</p></div></div>
+      <div class="step reveal"><div class="n">2</div><div><h3>A fifteen-minute call <span class="tag">Free</span></h3><p>You tell us how you set rates today. We tell you what we would change.</p></div></div>
+      <div class="step reveal"><div class="n">3</div><div><h3>A twelve-month pilot</h3><p>We do the work and report each month. You watch the numbers on your own returns.</p></div></div>
     </div>
-    <div class="ctarow"><a class="btn" href="mailto:adam@theinnkeeperagency.com?subject=Free%20look%20at%20my%20rates&body=Hi%20Adam%2C%0A%0AMy%20place%20is%3A%20%0ATown%3A%20%0ABest%20number%20to%20reach%20me%3A%20%0A%0APlease%20send%20the%20free%20one-page%20look.">Start with the free look</a><span>It takes one email with the name of your place. Free, with no obligation. Or call <a href="tel:+17605825260">(760) 582-5260</a>.</span></div>
+    <div class="band reveal" id="start">
+      <div>
+        <h3>Start with the free look.</h3>
+        <p>It takes one email with the name of your place. We send the one-page look and suggest a time for the call. Free, with no obligation.</p>
+      </div>
+      <div class="act">
+        <a class="btn" href="mailto:adam@theinnkeeperagency.com?subject=Free%20consultation%20for%20my%20property&amp;body=Hi%20Adam%2C%0A%0AI%20would%20like%20a%20free%20consultation.%0A%0AMy%20place%20is%3A%20%0ATown%3A%20%0ANumber%20of%20rooms%3A%20%0ABest%20number%20and%20time%20to%20reach%20me%3A%20%0A%0APlease%20send%20the%20free%20one-page%20look%20and%20suggest%20a%20time%20for%20a%20fifteen-minute%20call.%0A" data-cta="how">Get Free Consultation<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <span class="micro">Or call <a href="tel:+17605825260">(760) 582-5260</a>.</span>
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="questions">
-  <div class="wrap">
-    <div class="lab">Common questions</div>
-    <h2>Plain answers.</h2>
-    <div class="faq">
-      <details><summary>What does The Innkeeper Agency do?</summary><p>We manage revenue for independent motels, inns, lodges and cabins with about 6 to 30 rooms. That means setting nightly rates, keeping listings and photos current on the booking sites, building a direct booking website, and making sure the property shows up when travelers ask an AI assistant where to stay.</p></details>
-      <details><summary>What does it cost?</summary><p>Nothing up front. We earn 25 percent of the increase in room revenue over the same months of the year before, for twelve months. If revenue does not grow, the owner owes nothing for our time. Outside costs, such as a local photographer, are paid by the owner only when approved first.</p></details>
-      <details><summary>How is growth measured?</summary><p>On the transient occupancy tax returns the owner already files with the city or county. Nobody has to take our word for the result.</p></details>
-      <details><summary>What stays with the owner?</summary><p>Everything about running the place: guests, staff, cleaning, the phone and the front desk. Every payment goes straight to the owner's own accounts, and the website, photos and listings stay in the owner's name.</p></details>
-      <details><summary>What access do you need?</summary><p>A user login to the booking sites, the reservation program, the website and the Google listing. Ownership of every account stays with the owner, and we never see or change bank or payout details.</p></details>
-      <details><summary>What happens after twelve months?</summary><p>The pilot ends. The website, the domain, the photos and every account are in the owner's name and stay there. If both sides want to continue, we write a new agreement.</p></details>
-      <details><summary>Can the owner end it early?</summary><p>Yes. Either side can end the pilot with written notice. The agreement spells out the notice period and what is owed on growth already achieved, and the owner reads it before deciding anything.</p></details>
-      <details><summary>Do you work with brokers?</summary><p>Yes. If you list small lodging and have an owner whose income does not yet support the price they want, we can help raise the numbers a buyer and a lender look at. It costs the broker nothing.</p></details>
+  <div class="wrap faqgrid">
+    <div class="side reveal">
+      <div class="lab">Common questions</div>
+      <h2>Plain answers.</h2>
+      <p>Something not covered here? Email <a href="mailto:adam@theinnkeeperagency.com">adam@theinnkeeperagency.com</a> and Adam answers himself.</p>
+    </div>
+    <div class="faq reveal">
+      <details><summary>What does The Innkeeper Agency do?</summary><p>We manage revenue for independent motels, inns, lodges and cabins with about 6 to 30 rooms: nightly rates, listings and photos on the booking sites, a direct booking website, and working to make the property show up when travelers ask an AI assistant where to stay.</p></details>
+      <details><summary>What does it cost?</summary><p>Nothing up front. We earn 25 percent of the increase in room revenue over the same months of the year before, for twelve months. If revenue does not grow, you owe nothing for our time. Outside costs, such as a local photographer, are yours to pay only when you approve them first.</p></details>
+      <details><summary>How is growth measured?</summary><p>On the transient occupancy tax returns you already file with the city or county. Nobody has to take our word for the result.</p></details>
+      <details><summary>What stays with the owner?</summary><p>Everything about running the place: guests, staff, cleaning, the phone and the front desk. Every payment goes straight to your own accounts, and the website, photos and listings stay in your name.</p></details>
+      <details><summary>What access do you need?</summary><p>A user login to the booking sites, the reservation program, the website and the Google listing. You keep ownership of every account, and we never see or change bank or payout details.</p></details>
+      <details><summary>What happens after twelve months?</summary><p>The pilot ends. The website, the domain, the photos and every account are in your name and stay there. If both sides want to continue, we write a new agreement.</p></details>
+      <details><summary>Can the owner end it early?</summary><p>Yes. Either side can end the pilot with written notice. The agreement spells out the notice period and what is owed on growth already achieved, and you read it before deciding anything.</p></details>
+      <details><summary>Do you work with brokers?</summary><p>Yes. If you list small lodging and have an owner whose income does not yet support the price they want, we can help raise the numbers a buyer and a lender look at. It costs the broker nothing. <a href="brokers.html">See the page for brokers</a>.</p></details>
     </div>
   </div>
 </section>
@@ -210,23 +204,33 @@
 <footer class="who" id="contact">
   <div class="wrap">
     <div class="whogrid">
-      <img src="adam-headshot.jpg" alt="Adam Mealey, founder of The Innkeeper Agency" width="150" height="150">
+      <picture><source srcset="adam-headshot-320.webp" type="image/webp"><img src="adam-headshot-320.jpg" alt="Adam Mealey, founder of The Innkeeper Agency" width="150" height="150" loading="lazy"></picture>
       <div>
         <div class="name">Adam Mealey, founder</div>
         <p class="bio">I owned and ran boutique lodging in California mountain towns. Now I do the same pricing and listing work for independent owners.</p>
       </div>
       <div class="cta">
         <div class="ask">Get your free look, or book a 15-minute call</div>
-        <a class="tel" href="tel:+17605825260">(760) 582-5260</a>
-        <a class="mail" href="mailto:adam@theinnkeeperagency.com?subject=Free%20look%20at%20my%20rates&body=Hi%20Adam%2C%0A%0AMy%20place%20is%3A%20%0ATown%3A%20%0ABest%20number%20to%20reach%20me%3A%20%0A%0APlease%20send%20the%20free%20one-page%20look.">adam@theinnkeeperagency.com</a>
+        <a class="btn light" href="mailto:adam@theinnkeeperagency.com?subject=Free%20consultation%20for%20my%20property&amp;body=Hi%20Adam%2C%0A%0AI%20would%20like%20a%20free%20consultation.%0A%0AMy%20place%20is%3A%20%0ATown%3A%20%0ANumber%20of%20rooms%3A%20%0ABest%20number%20and%20time%20to%20reach%20me%3A%20%0A%0APlease%20send%20the%20free%20one-page%20look%20and%20suggest%20a%20time%20for%20a%20fifteen-minute%20call.%0A" data-cta="footer">Get Free Consultation<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <div class="lines">
+          <a class="tel" href="tel:+17605825260"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>(760) 582-5260</a>
+          <a href="mailto:adam@theinnkeeperagency.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>adam@theinnkeeperagency.com</a>
+        </div>
       </div>
     </div>
-    <p class="legal">The Innkeeper Agency, California. We do not list, sell or value property, and we do not give legal or tax advice. <a href="brokers.html">For brokers</a>. <a href="innkeeper-agency-overview.pdf">Download the one-page overview (PDF)</a></p>
+    <div class="foot">
+      <p class="legal">The Innkeeper Agency, California. We do not list, sell or value property, and we do not give legal or tax advice.</p>
+      <nav aria-label="Footer"><a href="#what">What we do</a><a href="#how">How it works</a><a href="brokers.html">For brokers</a><a href="innkeeper-agency-overview.pdf">One-page overview (PDF)</a></nav>
+    </div>
   </div>
 </footer>
 
-<div class="stick"><a href="tel:+17605825260">Call Adam, (760) 582-5260</a></div>
+<div class="stick" aria-label="Contact">
+  <a class="btn" href="mailto:adam@theinnkeeperagency.com?subject=Free%20consultation%20for%20my%20property&amp;body=Hi%20Adam%2C%0A%0AI%20would%20like%20a%20free%20consultation.%0A%0AMy%20place%20is%3A%20%0ATown%3A%20%0ANumber%20of%20rooms%3A%20%0ABest%20number%20and%20time%20to%20reach%20me%3A%20%0A%0APlease%20send%20the%20free%20one-page%20look%20and%20suggest%20a%20time%20for%20a%20fifteen-minute%20call.%0A" data-cta="sticky">Get Free Consultation</a>
+  <a class="tel" href="tel:+17605825260" aria-label="Call Adam at (760) 582-5260"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
+</div>
 
+<script src="site.js" defer></script>
 <!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "eb9034955fdf4686a08cb6ad9f226a54"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
