@@ -99,3 +99,25 @@
   .legal a { color: var(--sage); }
   @media (max-width: 900px) { .two { grid-template-columns: 1fr; } .nav .links a.opt { display: none; } }
   @media (max-width: 560px) { .nav .links { gap: 14px; font-size: 14.5px; } .nav .links a.call { display: none; } }
+
+/* Conversion pass, 2026-11-24: hero call to action, founder line, proof strip, call bar on phones */
+.herocta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; }
+.herocta .alt { color: var(--cream); font-weight: 600; text-underline-offset: 4px; }
+.founder { display: flex; align-items: center; gap: 13px; margin-top: 26px; color: var(--cream); font-size: 15.5px; line-height: 1.4; max-width: 470px; }
+.founder img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; flex: none; border: 2px solid rgba(246,240,227,.75); }
+.proof { background: var(--pine); color: var(--cream); border-top: 1px solid rgba(246,240,227,.14); }
+.proof .wrap { display: grid; grid-template-columns: repeat(4, 1fr); }
+.proof .p { padding: 24px 22px 26px; border-left: 1px solid rgba(246,240,227,.16); font-size: 15px; line-height: 1.4; }
+.proof .p:first-child { border-left: 0; padding-left: 0; }
+.proof .p b { display: block; font-family: "Fraunces", Georgia, serif; font-weight: 800; font-size: 30px; line-height: 1.1; color: #f08a6f; margin-bottom: 6px; }
+.ctarow { margin-top: 38px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; font-size: 16px; }
+.ctarow span { max-width: 520px; }
+.stick { display: none; }
+@media (max-width: 760px) {
+  .proof .wrap { grid-template-columns: 1fr 1fr; }
+  .proof .p { padding: 18px 14px 18px 0; border-left: 0; }
+  .proof .p b { font-size: 25px; }
+  body { padding-bottom: 54px; }
+  .stick { display: block; position: fixed; left: 0; right: 0; bottom: 0; background: var(--neon); text-align: center; padding: 14px 12px; z-index: 20; }
+  .stick a { color: #fff; font-weight: 700; text-decoration: none; font-size: 17px; }
+}
