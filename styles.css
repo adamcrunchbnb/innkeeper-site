@@ -311,3 +311,11 @@ dialog.reach .alt { margin: 16px 0 0; font-size: 15px; text-align: center; color
 dialog.reach .alt a { color: var(--pine); font-weight: 700; }
 dialog.reach .done:focus { outline: none; }
 dialog.reach .x { position: absolute; top: 8px; right: 12px; border: 0; background: none; font-size: 28px; line-height: 1; color: var(--pine); cursor: pointer; padding: 6px; }
+
+/* Tap targets on phones, 2026-11-26: header, footer and contact links reach 44 px tall. Inline links inside sentences keep their size. */
+@media (max-width: 760px) {
+  .brand a, .nav .links a, .foot nav a, .lines a { min-height: 44px; }
+  .nav .links a, .foot nav a, .lines a { display: inline-flex; align-items: center; }
+  .foot nav { gap: 0 22px; }
+}
+dialog.reach .x { min-width: 44px; min-height: 44px; }
